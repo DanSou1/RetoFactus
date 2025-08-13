@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetoFactus", "RetoFactus.csproj", "{19A2DFA9-2307-4490-B268-DFD6D5202087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19A2DFA9-2307-4490-B268-DFD6D5202087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19A2DFA9-2307-4490-B268-DFD6D5202087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19A2DFA9-2307-4490-B268-DFD6D5202087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19A2DFA9-2307-4490-B268-DFD6D5202087}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48664A40-28BC-410A-88C0-C7C728A8EEAD}
+	EndGlobalSection
+EndGlobal

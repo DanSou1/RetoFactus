@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewData["OcultarMenu"] = true;
+}
+
+<div class="container-sm">
+    <div class="row text-center">
+        <div class="p-5 col-6">
+            <h1>RETO FACTUS</h1>
+        </div>
+        <div class="p-5 col-6">
+            <div class="col-1 align-content-center text-center">
+                <form method="post" asp-controller="AuthToken" asp-action="getToken" onsubmit="mostrarCargando()">
+                    <label>Correo</label>
+                    <input type="email" name="user" value="sandbox@factus.com.co">
+                    <label>Contraseña</label>
+                    <input type="password" name="pwd" value="sandbox2024%">
+                    <input class="m-2" type="submit" value="Iniciar sesión">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

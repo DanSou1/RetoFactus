@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RetoFactus</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RetoFactus.styles.css" asp-append-version="true" />
+</head>
+<div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white text-center p-4 border-5 row align-items-center">
+            <div class="spinner-border text-light mb-3" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <div><strong>Cargando, por favor espera...</strong></div>
+        </div>
+    </div>
+</div>
+<body>
+    <header>
+        @if(ViewData["OcultarMenu"] == null || !(bool) ViewData["OcultarMenu"])
+        {
+            <div class="d-flex">
+                <!-- Menú lateral -->
+                <nav class="bg-light border-end" style="min-height: 100vh; width: 220px;">
+                    <div class="p-3">
+                        <a class="navbar-brand fw-bold d-block mb-4" href="#allBills">RetoFactus</a>
+                        <ul class="nav nav-pills flex-column">
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-dark" asp-controller="Bills" asp-action="BillsView">Mis facturas</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-dark" asp-controller="CreateBills" asp-action="NewBill">Crear factura</a>
+                            </li>
+                            <li class="nav-item mb-2">
+                                <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Contenido principal -->
+                <main class="p-4 w-100">
+                    @RenderBody()
+                </main>
+            </div>
+        }
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - RetoFactus - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/loading.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@using RetoFactus.Models
+@model RetoFactus.Models.ViewModels.CreateBillViewModel
+
+<h2>factura creada</h2>
+
+<p><strong>Rango Id:</strong> @Model.detailBillModel.numbering_range_id</p>
+<p><strong>Forma de pago:</strong> @Model.detailBillModel.payment_form</p>
+<p><strong>Tipo de pago:</strong> @Model.detailBillModel.payment_method_code</p>
+<p><strong>Organización:</strong> @Model.detailBillModel.customer.legal_organization_id</p>
+<p><strong>Observaciones:</strong> @Model.detailBillModel.observation</p>
+
+<h2>Cliente</h2>
+
+
+<p><strong>Tipo de identificación:</strong> @Model.detailBillModel.customer.identification_document_id</p>

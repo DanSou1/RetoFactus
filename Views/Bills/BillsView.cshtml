@@ -1,0 +1,40 @@
+﻿@using RetoFactus.Models
+@model BillsResponse
+@{
+    ViewData["Title"] = "Facturas";
+}
+<h1>@ViewData["Title"]</h1>
+@if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Mensaje
+    </div>
+}
+@{
+   if (Model != null)
+   {
+        <table id="allBills" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NOMBRE</th>
+                    <th scope="col">NUMERO DE FACTURA</th>
+                    <th scope="col">TOTAL</th>
+                </tr>
+            </thead>
+            @{
+                foreach (var factura in Model.data.data)
+                {
+                    <tbody>
+                    <tr>
+                        <td>@factura.id</td>
+                        <td>@factura.names</td>
+                        <td>@factura.number</td>
+                        <td>@factura.total</td>
+                    </tr>
+                    </tbody>
+                }
+            }
+        </table>
+   }
+}
