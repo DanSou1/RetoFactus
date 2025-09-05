@@ -19,7 +19,7 @@ public class MunicipalitiesService
     public async Task<MunicipalitiesModel> Municipalities()
     {
         var url = _configuration["ApiSettings:Url"];
-        var fullUrl = $"{url.TrimEnd('/')}/v1/municipalities";
+        var fullUrl = "https://api-sandbox.factus.com.co/v1/municipalities";
         var token = _memoryCache.Get<string>("accessToken");
         var request = new HttpRequestMessage(HttpMethod.Get, fullUrl);
         request.Headers.Authorization = new("Bearer", token);

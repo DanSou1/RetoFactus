@@ -5,6 +5,7 @@ using RetoFactus.Models;
 using System;
 using System.IO;
 using System.Text.Json;
+using static System.Net.WebRequestMethods;
 
 namespace RetoFactus.Services
 {
@@ -22,16 +23,13 @@ namespace RetoFactus.Services
 
         public async Task<TokenResponse> GetAccesToken(string user, string pwd)
         {
-            var clientId = _configuration["ApiSettings:ClientId"];
-            var clientSecret = _configuration["ApiSettings:ClientSecret"];
-            var url = _configuration["ApiSettings:Url"];
-            string fullUrl = $"{url.TrimEnd('/')}/oauth/token";
+            string fullUrl = "https://api-sandbox.factus.com.co/oauth/token";
             
             var requestData = new Dictionary<string, string>
             {
                 {"grant_type", "password" },
-                {"client_id", clientId },
-                {"client_secret", clientSecret },
+                {"client_id", "9e40adfa-164d-40cf-88d9-97834a3849ef" },
+                {"client_secret", "9npMuYmdNi9LD82x3D2YWurwvOx9kxhNjveycf5P" },
                 {"username", user },
                 {"password", pwd},
             };

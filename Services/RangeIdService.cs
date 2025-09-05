@@ -22,13 +22,7 @@ namespace RetoFactus.Services
         {
             var token = _memoryCache.Get<string>("accessToken");
             var url = _configuration["ApiSettings:Url"];
-            string fullUrl = 
-                $"{url.TrimEnd('/')}/v1/numbering-ranges?filter[id]" +
-                $"&filter[document]" +
-                $"&filter[resolution_number]" +
-                $"&filter[technical_key]" +
-                $"&filter[is_active]";
-
+            string fullUrl = "https://api-sandbox.factus.com.co/v1/numbering-ranges?filter[id]&filter[document]&filter[resolution_number]&filter[technical_key]&filter[is_active]";
             var request = new HttpRequestMessage(HttpMethod.Get, fullUrl);
             request.Headers.Authorization = new("Bearer", token);
             var response = await _httpClient.SendAsync(request);
