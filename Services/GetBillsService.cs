@@ -1,10 +1,6 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using RetoFactus.Models;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Policy;
 using System.Text.Json;
-using static System.Net.WebRequestMethods;
 
 
 namespace RetoFactus.Services
@@ -24,7 +20,8 @@ namespace RetoFactus.Services
         public async Task<BillsResponse> GetAllBills()
         {
             var token = _memoryCache.Get<string>("accessToken");
-            string fullUrl = "https://api-sandbox.factus.com.co//v1/bills?filter[identification]&filter[names]&filter[number]&filter[prefix]&filter[reference_code]&filter[status]";
+            string fullUrl =
+                "https://api-sandbox.factus.com.co/v1/bills?filter[identification]&filter[names]&filter[number]&filter[prefix]&filter[reference_code]&filter[status]";
             var request = new HttpRequestMessage(HttpMethod.Get, fullUrl);
             request.Headers.Authorization = new("Bearer", token);
 
