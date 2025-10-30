@@ -3,9 +3,7 @@ using NuGet.Common;
 using RetoFactus.Controllers;
 using RetoFactus.Models;
 using System;
-using System.IO;
 using System.Text.Json;
-using static System.Net.WebRequestMethods;
 
 namespace RetoFactus.Services
 {
