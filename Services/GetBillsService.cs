@@ -25,7 +25,6 @@ namespace RetoFactus.Services
         {
             var token = _memoryCache.Get<string>("accessToken");
             string fullUrl = "https://api-sandbox.factus.com.co//v1/bills?filter[identification]&filter[names]&filter[number]&filter[prefix]&filter[reference_code]&filter[status]";
-            string fullUrl = "https://api-sandbox.factus.com.co/v1/bills?filter[identification]&filter[names]&filter[number]&filter[prefix]&filter[reference_code]&filter[status]";
             var request = new HttpRequestMessage(HttpMethod.Get, fullUrl);
             request.Headers.Authorization = new("Bearer", token);
 
